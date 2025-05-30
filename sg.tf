@@ -1,6 +1,6 @@
 resource "aws_security_group" "my_security_group" {
-  name        = "my-sg-new"
-  description = "Allow SSH and HTTP"
+  name        = var.name
+  description = var.description
 #   vpc_id      = "vpc-xxxxxxxxxxxxxxxxx" 
 
   ingress {
