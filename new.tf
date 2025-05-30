@@ -18,6 +18,7 @@ resource "aws_instance" "myinstance2" {
   instance_type = "t2.micro"
   associate_public_ip_address = true
   key_name = "new-key"
+  vpc_security_group_ids = ["sg-0804ca5262af9fc27"]
 
   tags = {
     Name = "mywebapp2"
