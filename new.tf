@@ -12,3 +12,14 @@ resource "aws_instance" "myinstance" {
     Name = "mywebapp"
   }
 }
+
+resource "aws_instance" "myinstance2" {
+  ami = "ami-084568db4383264d4"
+  instance_type = "t2.micro"
+  associate_public_ip_address = true
+  key_name = "new-key"
+
+  tags = {
+    Name = "mywebapp2"
+  }
+}
