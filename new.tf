@@ -1,39 +1,12 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1" # or your preferred region
 }
 
-resource "aws_instance" "new_instance" {
-  ami = "ami-084568db4383264d4"
+resource "aws_instance" "web" {
+  ami           = "ami-0e35ddab05955cf57"
   instance_type = "t2.micro"
-  associate_public_ip_address = true
-  key_name = "new-key"
-  vpc_security_group_ids = [aws_security_group.my_security_group.id]
 
   tags = {
-    Name = "myinstance"
-  }         
-}
-
-resource "aws_instance" "myinstance2" {
-  ami = "ami-084568db4383264d4"
-  instance_type = "t2.micro"
-  associate_public_ip_address = true
-  key_name = "new-key"
-  vpc_security_group_ids = ["sg-0804ca5262af9fc27"]
-
-  tags = {
-    Name = "mywebapp2"
-  }
-}
-
-resource "aws_instance" "myinstance3" {
-  ami = "ami-084568db4383264d4"
-  instance_type = "t2.micro"
-  associate_public_ip_address = true
-  key_name = "new-key"
-  vpc_security_group_ids = [aws_security_group.my_security_group.id]
-
-  tags = {
-    Name = "mywebapp-3"
+    Name = "MyWebServer"
   }
 }
