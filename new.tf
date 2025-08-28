@@ -10,7 +10,7 @@ resource "aws_instance" "new instance" {
   vpc_security_group_ids = [aws_security_group.my_security_group.id]
 
   tags = {
-    Name = "mywebapp"
+    Name = "myinstance"
   }         
 }
 
